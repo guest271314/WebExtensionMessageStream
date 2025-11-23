@@ -112,8 +112,8 @@ https://groups.google.com/a/chromium.org/g/blink-network-dev/c/9MKtF4fPtMA?pli=1
 - https://groups.google.com/a/chromium.org/g/chromium-dev/c/I_hfhGILbDc/m/OVlsxYjUBAAJ
 - https://chromium.googlesource.com/chromium/src/+/main/mojo/README.md
 - https://github.com/chromium/chromium/blob/5a06296706a275b6539c39acedb0dc09a18b8543/content/browser/service_worker/service_worker_fetch_dispatcher.cc
-
+- https://developer.chrome.com/docs/capabilities/web-apis/fetch-streaming-requests
 ## License
 
 Do What the Fuck You Want to Public License [WTFPLv2](http://www.wtfpl.net/about/)
-- https://developer.chrome.com/docs/capabilities/web-apis/fetch-streaming-requests
+
