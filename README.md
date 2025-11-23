@@ -13,7 +13,7 @@ No standardized Web Extension API to send or transfer `TypedArray`s or `ArrayBuf
 
 Define `"web_accessible_resources"` in `manifest.json`; use `iframe` appended
 to arbitrary Web page to establish a `WindowClient` in `ServiceWorker` context;
-use Transferable Streams with `postMessage(readable, [readable])` to
+use Transferable Streams with `postMessage(readable, "*", [readable])` to
 transfer a `ReadableStream`	from the Web page to the `FetchEvent` in 
 `ServiceWorker` which becomes a full-duplex stream due to Chromium's use of Mojo
 between `WindowClient` and `CLient` and `fetch` event to handle `fetch()`.
