@@ -48,10 +48,6 @@ addEventListener("fetch", async (e) => {
   }
 });
 
-async function handleWebExtensionMessageStream(e) {
-  console.log(e);
-}
-
 async function WebExtensionMessageStream(
   target = "generic",
   id = "chrome.runtime.id",
@@ -152,37 +148,3 @@ chrome.tabs.onUpdated.addListener(async (id, info, tab) => {
 chrome.runtime.onInstalled.addListener((reason) => {
   console.log(reason, globalThis.messageClients);
 });
-// Usage
-/*
-  const encoder = new TextEncoder();
-  const { readable, writable, transferableWindow } = await WebExtensionMessageStream(location.host) // optional;
-  const writer = writable.getWriter();
-  readable.pipeThrough(new TextDecoderStream()).pipeTo(
-    new WritableStream({
-      write(message) {
-        console.log(message);
-      },
-      close() {
-        console.log("Stream close");
-      },
-      abort(reason) {
-        console.log(reason);
-      },
-    }),
-  ).then(() => console.log("Done streaming"))
-  .catch((e) => {
-    console.log(e);
-  })
-  .finally(() => {
-    console.log("WebExtensionMessageStream closed");
-  });
-
-  writer.write(encoder.encode("Test, test, test. Test to the point it breaks."));
-*/
-// Send messages to all clients
-/*
-  for (const [id, controller] of messageClients) {
-    controller.enqueue(new TextEncoder().encode(id));
-    console.log(await clients.get(id));
-  }
-*/
