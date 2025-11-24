@@ -16,7 +16,7 @@ to arbitrary Web page to establish a `WindowClient` in `ServiceWorker` context;
 use Transferable Streams with `postMessage(readable, "*", [readable])` to
 transfer a `ReadableStream`	from the Web page to the `FetchEvent` in 
 `ServiceWorker` which becomes a full-duplex stream due to Chromium's use of Mojo
-between `WindowClient` and `CLient` and `fetch` event to handle `fetch()`.
+between `WindowClient` and `Client` and `fetch` event to handle `fetch()`.
 
 ### Implementation details
 
@@ -106,7 +106,7 @@ await writer.close();
 ### References
 - https://issues.chromium.org/issues/40321352
 - https://groups.google.com/a/chromium.org/g/blink-network-dev/c/9MKtF4fPtMA?pli=1
-- https://docs.google.com/document/d/1_KuZzg5c3pncLJPFa8SuVm23AP4tft6mzPCL5at3I9M/edit?pli=1&tab=t.0#heading=h.ctj5hkqmripj
+- https://docs.google.com/document/d/1_KuZzg5c3pncLJPFa8SuVm23AP4tft6mzPCl5at3I9M/edit?pli=1&tab=t.0#heading=h.ctj5hkqmripj
 - https://issues.chromium.org/issues/40597904
 - https://github.com/whatwg/streams/blob/dd4e1806f894eff6ba006fb3c96657b8b104263b/explainers/transferable-streams.md
 - https://groups.google.com/a/chromium.org/g/chromium-dev/c/I_hfhGILbDc/m/OVlsxYjUBAAJ
