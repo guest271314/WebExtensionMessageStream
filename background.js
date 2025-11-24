@@ -63,7 +63,7 @@ async function WebExtensionMessageStream(
   // Dynamically generate extension ID for path, if necessary:
   // const extensionId = await generateIdForPath("/home/user/WebExtensionMessageStream");
   // const url = new URL(
-  //  `chrome-extension://${id}/transferableStream.html`,
+  //  `chrome-extension://${extensionId}/transferableStream.html`,
   // );
   async function generateIdForPath(path) {
     return [
