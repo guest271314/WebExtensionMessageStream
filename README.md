@@ -22,7 +22,7 @@ between `WindowClient` and `Client` and `fetch` event to handle `fetch()`.
 
 Internally Chromium has full-duplex stream capabilities between `WindowClient`
 and `Client` of `ServiceWorker` via Mojo. We use this to initialize a `TransformStream`
-with `writable` side the arbitrary Web page, and `readable` side sent to 
+with `writable` side in the arbitrary Web page, and `readable` side sent to 
 `ServiceWorker` as a streaming request with `fetch()` and `duplex: "half"` `RequestInit`
 option set.
 
