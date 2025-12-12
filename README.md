@@ -45,8 +45,13 @@ Something like
 
 ```js
 for (const [id, controller] of messageClients) {
-  controller.enqueue(new TextEncoder().encode(id));
-  console.log(await clients.get(id));
+  try {
+    if (await clients.get(id)) {
+      controller.enqueue(new TextEncoder().encode(id));
+    }
+  } catch (e) {
+    console.log(e);
+  }
 }
 ```
 
