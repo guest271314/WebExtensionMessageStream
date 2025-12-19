@@ -79,7 +79,6 @@ We'll use a modern design for full-duplex asynchronous messaging in the form of 
 const encoder = new TextEncoder();
 const { readable, writable, transferableWindow } = await WebExtensionMessageStream(location.host) // optional;
 const writer = writable.getWriter();
-writer.closed.then(() => transferableWindow.remove());
 readable.pipeThrough(new TextDecoderStream()).pipeTo(
   new WritableStream({
     write(message) {
@@ -97,6 +96,7 @@ readable.pipeThrough(new TextDecoderStream()).pipeTo(
   console.log(e); 
 })
 .finally(() => {
+  transferableWindow.remove();
   console.log("WebExtensionMessageStream closed");
 });
 
